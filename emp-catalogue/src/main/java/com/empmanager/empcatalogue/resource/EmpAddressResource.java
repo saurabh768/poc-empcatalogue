@@ -26,8 +26,9 @@ public class EmpAddressResource {
     @GetMapping("/getaddresslist")
     ResponseEntity<?> getAddressList(@RequestBody LoginDetails loginDetails)
     {
-        logger.info("Inside getAddressList method :: start");
+        logger.info("START : Inside getAddressList method");
         List<Address> addressList=empAddressService.getAddressList(loginDetails.getUsername(),loginDetails.getPassword());
+        logger.info("END : Inside getAddressList method :: ");
         return ResponseEntity.ok(addressList);
     }
 }
